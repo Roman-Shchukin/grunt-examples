@@ -23,3 +23,5 @@ steps:
     gruntFile: 'basic-sass-compile/Gruntfile.js'
     targets: 
     gruntCli: 'node_modules/grunt-cli/bin/grunt'
+- script: |
+    dir
