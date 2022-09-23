@@ -15,6 +15,7 @@ steps:
 #    versionSpec: '16.x'
 #    checkLatest: true
 - script: |
+    cd basic-sass-compile
     npm install
 #    grunt --gruntfile Gruntfile.js
 - task: Grunt@0
