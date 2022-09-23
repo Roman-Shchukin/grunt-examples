@@ -10,10 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '16.x'
-    checkLatest: true
+#- task: NodeTool@0
+#  inputs:
+#    versionSpec: '16.x'
+#    checkLatest: true
+- script: |
+    npm install -g grunt-cli
 - task: Grunt@0
   inputs:
     gruntFile: 'basic-sass-compile/Gruntfile.js'
