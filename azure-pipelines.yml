@@ -18,7 +18,7 @@ steps:
     cd intermediate-sass-watch-compile
     npm install
 #    grunt --gruntfile Gruntfile.js
-- task: Grunt@0.200.0
+- task: Grunt@0
   inputs:
     gruntFile: 'intermediate-sass-watch-compile/Gruntfile.js'
     targets: 
