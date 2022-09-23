@@ -24,4 +24,5 @@ steps:
     targets: 
     gruntCli: 'node_modules/grunt-cli/bin/grunt'
 - script: |
+    cd basic-sass-compile
     dir
