@@ -14,8 +14,8 @@ steps:
 #  inputs:
 #    versionSpec: '16.x'
 #    checkLatest: true
-#- script: |
-#    npm install
+- script: |
+    npm install
 #    grunt --gruntfile Gruntfile.js
 - task: Grunt@0
   inputs:
