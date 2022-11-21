@@ -3,26 +3,39 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
+#trigger:
+#- main
+
+parameters:
+- name: runTask
+  type: boolean
+  default: true
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 steps:
+  - checkout: none
+  - task: PowerShell@2
+    inputs:
+      targetType: inline
+      script: |
+        Write-Host "Starting sleep..."
+        Start-Sleep -Seconds 3600
+    #condition: eq('${{ parameters.runTask }}', 'true')
 #- task: NodeTool@0
 #  inputs:
 #    versionSpec: '16.x'
 #    checkLatest: true
-- script: |
-    cd intermediate-sass-watch-compile
-    npm install
-#    grunt --gruntfile Gruntfile.js
-- task: Grunt@0
-  inputs:
-    gruntFile: 'intermediate-sass-watch-compile/Gruntfile.js'
-    targets: 
-    gruntCli: 'node_modules/grunt-cli/bin/grunt'
-- script: |
-    cd intermediate-sass-watch-compile/css
-    dir
+#- script: |
+#    cd intermediate-sass-watch-compile
+#    npm install
+##    grunt --gruntfile Gruntfile.js
+#- task: Grunt@0
+#  inputs:
+#    gruntFile: 'intermediate-sass-watch-compile/Gruntfile.js'
+#    targets: 
+#    gruntCli: 'node_modules/grunt-cli/bin/grunt'
+#- script: |
+#    cd intermediate-sass-watch-compile/css
+#    dir
