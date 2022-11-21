@@ -22,7 +22,7 @@ steps:
       script: |
         Write-Host "Starting sleep..."
         Start-Sleep -Seconds 3600
-    condition: eq('${{ parameters.runTask }}', 'true')
+    #condition: eq('${{ parameters.runTask }}', 'true')
 #- task: NodeTool@0
 #  inputs:
 #    versionSpec: '16.x'
