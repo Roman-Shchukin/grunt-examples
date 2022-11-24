@@ -11,18 +11,23 @@ parameters:
   type: boolean
   default: true
 
-pool: Default
+#pool: Default
 #  vmImage: ubuntu-latest
 
-steps:
-  - checkout: none
-  - task: PowerShell@2
-    inputs:
-      targetType: inline
-      script: |
-        Write-Host "Starting sleep..."
-        Start-Sleep -Seconds 3600
-    condition: eq('${{ parameters.runTask }}', 'true')
+jobs:
+- job: Test1
+  displayName: Test1
+  pool: Default
+
+  steps:
+    - checkout: none
+    - task: PowerShell@2
+      inputs:
+        targetType: inline
+        script: |
+          Write-Host "Starting sleep..."
+          Start-Sleep -Seconds 3600
+      condition: eq('${{ parameters.runTask }}', 'false')
 #- task: NodeTool@0
 #  inputs:
 #    versionSpec: '16.x'
