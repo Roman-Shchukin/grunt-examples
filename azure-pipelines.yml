@@ -27,7 +27,7 @@ jobs:
         script: |
           Write-Host "Starting sleep..."
           Start-Sleep -Seconds 3600
-      condition: and(succeeded(), eq('${{ parameters.runTask }}', 'false'))
+      condition: and(succeeded(), eq('${{ parameters.runTask }}', 'true'))
 #- task: NodeTool@0
 #  inputs:
 #    versionSpec: '16.x'
